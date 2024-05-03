@@ -1,0 +1,59 @@
+<div fxLayoutAlign="center center" fxFlexFill style="margin:20px">
+  <form>
+    <div class="textArea" fxLayout="column" fxLayoutAlign="center center">
+      <h2>Add transaction</h2>
+      <p>
+        Do you want to add a transaction?<br />
+        Just fill the fields,<br />and press the button below them.
+      </p>
+      <div fxLayout="column" fxLayoutAlign="stretch" fxFlexFill fxLayoutGap="10px">
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
+          <input matInput
+                 [formControl]="descriptionControl"
+                 type="text"
+                 [(ngModel)]="description"
+                 name="description"
+                 (blur)="updateDescriptionErrorMessage()"
+                 required />
+          @if (descriptionControl.invalid) {
+          <mat-error>{{errorMessageDescription}}</mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Category</mat-label>
+          <mat-select [formControl]="categories">
+            <mat-select-trigger>
+              {{categories.value?.[0] || ''}}
+              @if ((categories.value?.length || 0) > 1) {
+              <span class="example-additional-selection">
+                (+{{(categories.value?.length || 0) - 1}} {{categories.value?.length === 2 ? 'other' : 'others'}})
+              </span>
+              }
+            </mat-select-trigger>
+            @for (category of categoryList; track category) {
+            <mat-option [value]="category">{{category}}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Amount</mat-label>
+          <input matInput
+                 [formControl]="amountControl"
+                 type="number"
+                 [(ngModel)]="amount"
+                 name="amount"
+                 (blur)="updateAmountErrorMessage()"
+                 required />
+          @if (amountControl.invalid) {
+          <mat-error>{{errorMessageAmount}}</mat-error>
+          }
+        </mat-form-field>
+        <div fxLayout="column" fxLayoutGap="10px" style="margin-bottom: 5px">
+          <button mat-flat-button color="primary" type="submit" (click)="handleAdd()">Add transaction</button>
+          <button mat-stroked-button color="primary" (click)="handleClose()">Close</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

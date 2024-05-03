@@ -1,0 +1,27 @@
+.container {
+  background-image: url("../../../../assets/white-surface-with-reflections-smooth-minimal-light-waves-background-blurry-silk-waves-minimal-soft-grayscale-ripples-flow-3d-render-illustration.jpg");
+  background-size: cover;
+}
+
+mat-card {
+    padding: 50px;
+}
+
+.textArea h2 {
+  text-align: center;
+}
+
+.textArea p {
+  text-align: center;
+}
+
+.image-container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  .image-container img {
+    width: 100px;
+    height: 100px;
+  }

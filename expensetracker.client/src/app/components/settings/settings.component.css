@@ -1,0 +1,22 @@
+.textArea {
+  margin:10px;
+}
+
+  .textArea h2 {
+    text-align: center;
+  }
+
+  .textArea p {
+    text-align: center;
+  }
+
+.image-container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  .image-container img {
+    width: 100px;
+    height: 100px;
+  }

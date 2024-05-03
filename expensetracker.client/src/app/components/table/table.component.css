@@ -1,0 +1,14 @@
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+mat-card {
+    padding: 10px;
+    margin: 20px;
+    width: auto;
+}

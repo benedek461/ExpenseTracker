@@ -1,0 +1,32 @@
+<app-linechart></app-linechart>
+<div class="incomeAndCost" fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="center center">
+  <mat-card class="example-card" fxFlex="30">
+    <mat-card-header>
+      <mat-card-title>Income</mat-card-title>
+      <mat-card-subtitle>This is your income so far...</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <h1>{{income ? income : 'Nothing Yet...'}}</h1>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="example-card" fxFlex="25">
+    <mat-card-header>
+      <mat-card-title>Cost</mat-card-title>
+      <mat-card-subtitle>This is your cost so far...</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <h1>{{ cost ? cost : 'Nothing yet...' }}</h1>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="example-card" fxFlex="25">
+    <mat-card-header>
+      <mat-card-title>Current balance</mat-card-title>
+      <mat-card-subtitle>This is your current balance so far...</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <h1>{{currentBalance}}</h1>
+    </mat-card-content>
+  </mat-card>
+</div>
+<app-table></app-table>
+<button class="addButton" mat-flat-button color="primary" (click)="addRow()">Add transaction</button>
